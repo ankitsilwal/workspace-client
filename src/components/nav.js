@@ -1,9 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+
 const Navbar = () => {
   return (
     <nav style={styles.nav}>
+      <h2 style={{textAlign:"center"}}>OMNIE LIBERA WORKSPACES</h2>
       <ul style={styles.navList}>
         <li style={styles.navItem}>
           <Link to="/" style={styles.navLink}>
@@ -12,7 +14,7 @@ const Navbar = () => {
         </li>
         <li style={styles.navItem}>
           <Link to="/create" style={styles.navLink}>
-            Create
+          Create
           </Link>
         </li>
       </ul>
@@ -24,7 +26,7 @@ const styles = {
   nav: {
     backgroundColor: "#333",
     color: "#fff",
-    padding: "10px 20px",
+    padding: "10px 200px",
   },
   navList: {
     listStyleType: "none",
@@ -33,7 +35,7 @@ const styles = {
     justifyContent: "left",
   },
   navItem: {
-    marginRight: "15px",
+    marginRight: "90px",
   },
   navLink: {
     color: "#fff",

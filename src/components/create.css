@@ -9,6 +9,11 @@ form {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
   
+.submit-buttons{
+  display: flex;
+  gap: 1rem;
+}
+
   /* Styles for the labels and inputs */
   label {
     display: block;

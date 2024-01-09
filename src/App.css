@@ -53,21 +53,9 @@ body {
   .dataTable {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 20px;
-  }
-  
-  .dataTable th,
-  .dataTable td {
-    padding: 100px;
-    border: 1px solid #ccc;
-    text-align: left;
-  }
-  
-  .dataTable th {
-    background-color: #f2f2f2;
-  }
-  
-  .dataTable tr:hover {
-    background-color: #e0e0e0;
-  }
+    margin-top: 80px;
+}
+
+
+
   
