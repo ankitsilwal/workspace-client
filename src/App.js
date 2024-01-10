@@ -121,8 +121,8 @@ function App() {
   // SEARCH BAR
   function handlefilter(event) {
     const searchTerm = event.target.value.toLowerCase();
-  
-    if (searchTerm.trim() === '') {
+
+    if (searchTerm.trim() === "") {
       fetch("http://localhost:3000/workspace")
         .then((response) => response.json())
         .then((json) => setRecords(json));
@@ -144,7 +144,6 @@ function App() {
   // POP UP
   const [showModal, setShowModal] = useState(false);
   const [selectedRecord, setSelectedRecord] = useState(null);
-  
 
   const handleViewMore = (row) => {
     setSelectedRecord(row);
@@ -193,11 +192,13 @@ function App() {
             <span onClick={() => setShowModal(false)} style={styles.closeBtn}>
               &times;
             </span>
-            <h2 style={{textTransform:"uppercase"}}>{selectedRecord?.name}</h2>
+            <h2 style={{ textTransform: "uppercase" }}>
+              {selectedRecord?.name}
+            </h2>
             <p>Registration Code: {selectedRecord?.registration_key}</p>
             <p>Password: {selectedRecord?.password}</p>
             <p>Using Now: {selectedRecord?.your_name}</p>
-            <p>Available: {selectedRecord?.isActive  ? "🔴" : "🟢"}</p>
+            <p>Available: {selectedRecord?.isActive ? "🔴" : "🟢"}</p>
             <button
               style={{
                 backgroundColor: "#ff6347",
@@ -279,7 +280,7 @@ const styles = {
   modalContent: {
     backgroundColor: "#fefefe",
     padding: "40px",
-    textAlign: 'center',
+    textAlign: "center",
     border: "1px solid #ddd",
     borderRadius: "8px",
     maxWidth: "80%",
@@ -287,8 +288,8 @@ const styles = {
     position: "relative",
     overflow: "auto",
     maxHeight: "90%",
-    height: '18rem',
-    width: '20rem'
+    height: "18rem",
+    width: "20rem",
   },
   closeBtn: {
     position: "absolute",
