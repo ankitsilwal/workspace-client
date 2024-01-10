@@ -20,8 +20,8 @@ export const Updatefull = () => {
         `http://localhost:3000/workspace/update/${_id}`,
         {
           name: name,
-          password:password,
-          registration_key:registration_key
+          password: password,
+          registration_key: registration_key,
         }
       );
       setResponse(response.data);
@@ -32,11 +32,10 @@ export const Updatefull = () => {
   };
 
   return (
-    
     <form onSubmit={postData}>
-        <h2 style={{textAlign:"center"}}>Enter Updated Details</h2>
+      <h2 style={{ textAlign: "center" }}>Enter Updated Details</h2>
       <label>
-         Name:
+        Name:
         <input
           type="text"
           name="name"
@@ -46,7 +45,23 @@ export const Updatefull = () => {
         />
       </label>
       <label>
-         Password:
+        Registration Code:
+        <select
+          type="text"
+          name="registration_key"
+          value={registration_key}
+          onChange={(e) => setregistration_key(e.target.value)}
+          required
+        >
+          <option value="" disabled>
+            Select a Registration Code
+          </option>
+          <option value="wsbom+G32VU3">wsbom+G32VU3</option>
+          <option value="SLiad+YKP85C">SLiad+YKP85C</option>
+        </select>
+      </label>
+      <label>
+        Password:
         <input
           type="text"
           name="password"
@@ -55,16 +70,7 @@ export const Updatefull = () => {
           required
         />
       </label>
-      <label>
-        Registration Key:
-        <input
-          type="text"
-          name="registration_key"
-          value={registration_key}
-          onChange={(e) => setregistration_key(e.target.value)}
-          required
-        />
-      </label>
+
       <div>
         {/* <label>
           isActive:

@@ -33,6 +33,7 @@ export const Create = () => {
 
   return (
     <form onSubmit={postData}>
+      <h2 style={{textAlign:"center"}}>Enter Details</h2>
       <label>
         Name:
         <input
@@ -44,14 +45,17 @@ export const Create = () => {
         />
       </label>
       <label>
-        Registration Key:
-        <input
-          type="text"
+        Registration Code:
+        <select
           name="registration_key"
           value={registrationKey}
           onChange={(e) => setRegistrationKey(e.target.value)}
           required
-        />
+        >
+          <option value="" disabled>Select a Registration Code</option>
+          <option value="wsbom+G32VU3">wsbom+G32VU3</option>
+          <option value="SLiad+YKP85C">SLiad+YKP85C</option>
+        </select>
       </label>
       <label>
         Password:

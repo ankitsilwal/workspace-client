@@ -120,10 +120,18 @@ function App() {
 
   // SEARCH BAR
   function handlefilter(event) {
-    const newData = records.filter((row) => {
-      return row.name.toLowerCase().includes(event.target.value.toLowerCase());
-    });
-    setRecords(newData);
+    const searchTerm = event.target.value.toLowerCase();
+  
+    if (searchTerm.trim() === '') {
+      fetch("http://localhost:3000/workspace")
+        .then((response) => response.json())
+        .then((json) => setRecords(json));
+    } else {
+      const newData = records.filter((row) => {
+        return row.name.toLowerCase().includes(searchTerm);
+      });
+      setRecords(newData);
+    }
   }
 
   // CONNECTION WITH API
@@ -186,7 +194,7 @@ function App() {
               &times;
             </span>
             <h2 style={{textTransform:"uppercase"}}>{selectedRecord?.name}</h2>
-            <p style={{fontWeight:"bold"}}>Registration Key: {selectedRecord?.registration_key}</p>
+            <p>Registration Code: {selectedRecord?.registration_key}</p>
             <p>Password: {selectedRecord?.password}</p>
             <p>Using Now: {selectedRecord?.your_name}</p>
             <p>Available: {selectedRecord?.isActive  ? "🔴" : "🟢"}</p>

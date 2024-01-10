@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
   return (
     <nav style={styles.nav}>
-      <h2 style={{textAlign:"center"}}>OMNIE LIBERA WORKSPACES</h2>
+      <h2 style={{textAlign:"center"}}>OMNIE-LIBERA WORKSPACES</h2>
       <ul style={styles.navList}>
         <li style={styles.navItem}>
           <Link to="/" style={styles.navLink}>
